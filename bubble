@@ -1,0 +1,25 @@
+ class Bubble implements  Sortable{
+     int licznik =0;
+     public int[] sort(int[] tab) {
+         int a;
+         int n = tab.length;
+         for(int i=0; i < n-1; i++)
+         {
+             for (int j=1; j < n-i; j++ )
+             {
+                if (tab[j-1] > tab[j])//poprzedni element tablicy jest większy niż nastepny
+                {
+                    licznik ++;// jeśłi warunek jest sepłniony program dojdzie w to miejsce i licznik się zwiększy
+                a = tab[j-1];
+                tab[j-1]=tab[j];
+                tab[j]=a;
+                }
+             }
+         }
+         return tab;
+     }
+
+     public double step_counting() {
+         return licznik;
+     }
+ }
